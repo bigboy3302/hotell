@@ -1,0 +1,30 @@
+use hotel;
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY, 
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    admin boolean NOT NULL DEFAULT false
+);
+
+
+CREATE TABLE listings(
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+title VARCHAR(255) NOT NULL,
+image VARCHAR(255) NOT NULL,
+price decimal NOT NULL,
+availability BOOLEAN NOT NULL DEFAULT TRUE,
+location VARCHAR(255) NOT NULL  
+);
+
+
+CREATE TABLE reserved(
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+listingId INT NOT NULL,
+title VARCHAR(255) NOT NULL,
+image VARCHAR(255) NOT NULL,
+price INT NOT NULL,
+availability BOOLEAN NOT NULL DEFAULT false,
+location VARCHAR(255) NOT NULL,  
+FOREIGN KEY (listingId) REFERENCES listings(id)
+);
