@@ -1,8 +1,9 @@
 <?php
 
-$config = [
+return  [
     "host" => "localhost",
     "dbname" => "hotel",
     "user" => "root",
-    "password" => "",
-]; 
+    "password" => "root",
+];
+?>

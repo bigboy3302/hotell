@@ -5,20 +5,17 @@ require "../app/core/Database.php";
 require "../app/models/User.php";
 $config = require("../app/config.php");
 
-
-
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    session_start();
-
     $db = new Database($config);
     $errors = validateInput($_POST);
 
     if (empty($errors)) {
-        if (accountExists($db, $_POST["email"])) {
-            $errors["email"] = "Konts jau eksistē";
+        if (accountExists($db, $_POST["email"], $_POST["username"])) {
+            $errors["email"] = "Konts ar šo epastu vai lietotājvārdu jau eksistē";
+            $errors["username"] = "Konts ar šo epastu vai lietotājvārdu jau eksistē";
         } else {
             registerUser($db, $_POST);
-            initializeSession($db, $_POST["email"]);
+            initializeSession($db, $_POST["email"], $_POST["username"]);
             setFlashMessage("Tu esi reģistrējies");
             redirectTo("/login");
         }
@@ -34,14 +31,14 @@ function validateInput($input) {
         $errors["password"] = "Vispār atceries paroli?";
     }
     if (!Validator::username($input["username"])) {
-        $errors["username"] = "Tu lietotaja vārdu aizmirsi!";
+        $errors["username"] = "Tu lietotāja vārdu aizmirsi!";
     }
     return $errors;
 }
 
-function accountExists($db, $email) {
-    $query = "SELECT * FROM users WHERE email = :email";
-    $params = [":email" => $email];
+function accountExists($db, $email, $username) {
+    $query = "SELECT * FROM users WHERE email = :email OR username = :username";
+    $params = [":email" => $email, ":username" => $username];
     return $db->execute($query, $params)->fetch(PDO::FETCH_ASSOC);
 }
 
@@ -55,12 +52,13 @@ function registerUser($db, $data) {
     $db->execute($query, $params);
 }
 
-function initializeSession($db, $email) {
-    $query = "SELECT id FROM users WHERE email = :email";
-    $new_user_id = $db->execute($query, [":email" => $email])->fetchColumn();
+function initializeSession($db, $email, $username) {
+    $query = "SELECT id FROM users WHERE email = :email OR username = :username";
+    $new_user_id = $db->execute($query, [":email" => $email, ":username" => $username])->fetchColumn();
 
     $_SESSION["user_id"] = $new_user_id;
     $_SESSION["email"] = $email;
+    $_SESSION["username"] = $username;
 }
 
 function setFlashMessage($message) {
@@ -72,8 +70,6 @@ function redirectTo($url) {
     die();
 }
 
-
-
-
 $title = "Register";
 require "../app/views/auth/register.view.php";
+?>
