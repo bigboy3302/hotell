@@ -1,0 +1,261 @@
+header {
+  background-color: #1E1E1E;
+  padding: 30px 0;
+}
+nav {
+  text-align: right;
+}
+
+nav a {
+  color: #E0E0E0;
+  font-size: 18px;
+  text-decoration: underline;
+  padding: 15px 40px;
+  margin: 0 30px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #3D3D3D;
+  cursor: pointer;
+}
+
+/* index */
+
+.apartment-box {
+  width: 260px;
+  margin-bottom: 15px;
+  border: 2px solid #bbb;
+  border-radius: 8px;
+  padding: 15px;
+  background: linear-gradient(to bottom, #f5f5f590, #a0a0a090);
+  position: relative;
+  box-shadow: 3px 3px 3px rgb(100, 100, 100);
+}
+
+.input-label {
+  width: 120px;
+}
+
+.apartment-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.available {
+  color: #28A745;
+}
+
+.no-rooms {
+  color: #DC3545;
+}
+
+body {
+  margin: 0;
+  background-color: #2C3E50;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px rgb(100, 100, 100);
+}
+
+.delete-button {
+  background-color: #FF5733;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.delete-button:hover {
+  background-color: #C70039;
+}
+
+h2, p {
+  color: #4A4A4A;
+  text-shadow: 0.5px 0.5px 0.5px rgb(100, 100, 100);
+}
+
+h1 {
+  color: #1A1A1A;
+  text-shadow: 0.5px 0.5px 0.5px rgb(100, 100, 100);
+}
+
+button {
+  text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.6);
+  background-color: #2E4053;
+  border-radius: 8px;
+  color: #FAFAFA;
+  border: 2px solid #2E4053;
+  padding: 7px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #F39C12;
+  transform: scale(1.1);
+  border-color: #F39C12;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  background-color: #FCF3CF;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-form input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #D4AC0D;
+  border-radius: 6px;
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+.search-form select {
+  padding: 10px;
+  border: 2px solid #D4AC0D;
+  border-radius: 6px;
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+.search-form button {
+  text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.6);
+  background-color: #1C2833;
+  border-radius: 8px;
+  color: #FAFAFA;
+  border: 2px solid #1C2833;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #7D3C98;
+  transform: scale(1.1);
+  border-color: #7D3C98;
+}
+
+.center {
+  text-align: center;
+}
+
+/* profile */
+
+.container-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #f5f5f590, #a0a0a090);
+  border-radius: 25px;
+  margin: 60px auto;
+  padding: 0 25px;
+  max-width: 1300px;
+}
+
+.profile-logout-box {
+  text-align: right;
+}
+
+.changeAmountForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid #bbb;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2);
+  margin: 25px auto;
+  width: 320px;
+}
+
+.shadow_logout__btn {
+  height: 36px;
+  width: 100px;
+  background-color: #B03A2E;
+  border-color: #B03A2E;
+}
+
+.shadow_logout__btn:hover {
+  background-color: #641E16;
+  border-color: #641E16;
+}
+
+.form-container {
+  width: 550px;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid #f5f5f5;
+}
+
+.center {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-label {
+  margin: 15px 0 10px;
+}
+
+.form-input,
+.form-select,
+.form-textarea,
+.form-button {
+  width: 280px;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #bbb;
+  border-radius: 6px;
+}
+
+.form-select {
+  width: 300px;
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.form-error {
+  color: #E74C3C;
+  font-size: 0.9em;
+  margin-top: -12px;
+  margin-bottom: 15px;
+}
